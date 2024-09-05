@@ -1,8 +1,11 @@
 node{
-    stage('*** Phase 1 ***') {
+    stage('Build mev-boost') {
         //Using bash commands
         sh '''#!/bin/bash
-            echo "Test cloud-v!\n"
-         '''
+              git clone https://github.com/flashbots/mev-boost.git
+	      cd mev-boost
+	      git checkout stable
+	      make build
+        '''
     }
 }
