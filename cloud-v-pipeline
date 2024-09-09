@@ -1,5 +1,5 @@
 node{
-    stage('Build mev-boost') {
+    stage('Build mev-booooost') {
         //Using bash commands
         sh '''#!/bin/bash
               git clone https://github.com/flashbots/mev-boost.git
