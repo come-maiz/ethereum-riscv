@@ -1,11 +1,12 @@
 node{
-    stage('Build mev-booooost') {
+    stage('Build mev-boost') {
         //Using bash commands
         sh '''#!/bin/bash
               git clone https://github.com/flashbots/mev-boost.git
 	      cd mev-boost
 	      git checkout stable
 	      make build
+	      make test
         '''
     }
 }
