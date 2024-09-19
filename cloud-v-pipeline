@@ -1,21 +1,19 @@
 node{
-    stages {
-        stage('Test mev-boost') {
-            sh '''#!/bin/bash
-                  git clone https://github.com/flashbots/mev-boost.git
-                  cd mev-boost
-                  git checkout stable
-                  make build
-                  make test
-            '''
-        }
-	stage('Test trin') {
-            sh '''#!/bin/bash
-                  git clone https://github.com/ethereum/trin.git
-                  cd trin
-                  cargo build
-                  cargo test
-            '''
-        }
+    stage('Test mev-boost') {
+        sh '''#!/bin/bash
+              git clone https://github.com/flashbots/mev-boost.git
+              cd mev-boost
+              git checkout stable
+              make build
+              make test
+        '''
+    }
+    stage('Test trin') {
+        sh '''#!/bin/bash
+              git clone https://github.com/ethereum/trin.git
+              cd trin
+              cargo build
+              cargo test
+        '''
     }
 }
