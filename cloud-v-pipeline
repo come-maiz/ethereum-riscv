@@ -12,6 +12,7 @@ node{
         sh '''#!/bin/bash
               git clone https://github.com/ethereum/trin.git
               cd trin
+	      git submodule update --init
               cargo build
               cargo test
         '''
