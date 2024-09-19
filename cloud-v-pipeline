@@ -1,6 +1,7 @@
 node{
     stage('Test mev-boost') {
         sh '''#!/bin/bash
+              rm -rf mev-boost
               git clone https://github.com/flashbots/mev-boost.git
               cd mev-boost
               git checkout stable
@@ -10,10 +11,11 @@ node{
     }
     stage('Test trin') {
         sh '''#!/bin/bash
+              rm -rf trin
               git clone https://github.com/ethereum/trin.git
               cd trin
 	      git submodule update --init
-              cargo build
+              cargo build --workspace
               cargo test
         '''
     }
